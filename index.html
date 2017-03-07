@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Numerology calculator</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+  </head>
+
+  <body>
+    <header>
+    <h1>Pythagoras and Chaldean Calculator</h1>
+    </header>
+    <div class="nav">
+      <h3>Convert Words To Numbers</h3>
+      <p>Enter the name:</p>
+      <div class="content">
+      <input type="text">
+      <button onclick="calculate()">Calculate</button>
+      <div class="result"></div>
+      </div>
+    </div>
+
+
+    <script>
+      var PYTHAGOREAN = {
+        'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9,
+        'j': 1, 'k': 2, 'l': 3, 'm': 4, 'n': 5, 'o': 6, 'p': 7, 'q': 8, 'r': 9,
+        's': 1, 't': 2, 'u': 3, 'v': 4, 'w': 5, 'x': 6, 'y': 7, 'z': 8
+      };
+
+      var CHALDEAN = {
+        'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 8, 'g': 3, 'h': 5, 'i': 1,
+        'j': 1, 'k': 2, 'l': 3, 'm': 4, 'n': 5, 'o': 7, 'p': 8, 'q': 1, 'r': 2,
+        's': 3, 't': 4, 'u': 6, 'v': 6, 'w': 6, 'x': 5, 'y': 1, 'z': 7
+      };
+
+      // Set up HTML elements
+      var input = document.querySelector('input');
+      var button = document.querySelector('button');
+      var result = document.querySelector('.result');
+
+      // Metode
+      function calculate(){
+        // Empty HTML
+        result.innerHTML = '';
+
+        // Print results
+        printResult(PYTHAGOREAN, 'Pythagoras');
+        printResult(CHALDEAN, 'Chaldean');
+      }
+
+      // Print list
+      function printResult(list, text) {
+        var letters = input.value.toLowerCase().replace(/[^0-9a-z]/g, '').split('');
+        var sum = 0, l, i;
+        for(i = 0; i < letters.length; i++){
+          // Extract letter from array
+          l = letters[i];
+
+          // Lookup or convert letter and add to sum
+          sum += list[l] || parseInt(l);
+        }
+
+        // Write the sum to screen
+        result.innerHTML += '<div class="result-text">' + text + ' ' + sum + '</div>';
+      }
+
+    </script>
+
+    <div class="num">
+      <h3>Pythagoras Numerology</h3>
+
+        <table style="width:50%">
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+            <td>G</td>
+            <td>H</td>
+            <td>I</td>
+          </tr>
+          <tr>
+            <td>J</td>
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+            <td>N</td>
+            <td>O</td>
+            <td>P</td>
+            <td>Q</td>
+            <td>R</td>
+          </tr>
+          <tr>
+            <td>S</td>
+            <td>T</td>
+            <td>U</td>
+            <td>V</td>
+            <td>W</td>
+            <td>X</td>
+            <td>Y</td>
+            <td>Z</td>
+            <td></td>
+          </tr>
+        </table>
+        <ul>
+          <li>
+            The Pythagorean method was developed by Pythagoras, a Greek mathematician and metaphysician who lived during the 6th century.
+          </li>
+          <li>
+            The numbers is based from 1 through 9.
+          </li>
+          <li>
+            Pythagorean numerology is the easiest, the best known, and the most widely used by modern numerologists.
+          </li>
+          <li>
+            Pythagorean system simply assigns the numbers in sequence so A=1, B=2, C=3 and so on.
+          </li>
+          <li>
+            Pythagorean numerology is often referred to as Western numerology as well as Modern numerology.
+          </li>
+          <li>
+            Pythagorean system uses only single digit numbers.
+          </li>
+          <li>
+            Numerology is also an excellent way to gain insight into other people. Pythagorean numerology can help you achieve these goals in addition to helping you understand what types of people are most compatible with you and why.
+          </li>
+        </ul>
+        <br>
+      <h3>Chaldean Numerology</h3>
+
+        <table style="width:50%">
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>U</td>
+            <td>O</td>
+            <td>F</td>
+          </tr>
+          <tr>
+            <td>I</td>
+            <td>K</td>
+            <td>G</td>
+            <td>M</td>
+            <td>H</td>
+            <td>V</td>
+            <td>Z</td>
+            <td>P</td>
+          </tr>
+          <tr>
+            <td>J</td>
+            <td>R</td>
+            <td>L</td>
+            <td>T</td>
+            <td>N</td>
+            <td>W</td>
+            <td></td>
+            <td></td>
+          </tr>
+           <tr>
+            <td>Q</td>
+            <td></td>
+            <td>S</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+           <tr>
+            <td>Y</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <ul>
+          <li>
+            The Chaldean numerology system is perhaps the oldest form of numerology known, with its origin in ancient Babylon.
+          </li>
+          <li>
+            Every letter has a numerical value from 1 to 8.</li>
+          <li>
+            It has no letters attached to number 9, which is considered very spiritual. Using this letter in Chaldean Numerology is forbidden, as it is a great dishonesty.
+          </li>
+          <li>
+            Chaldean system used sounds and tones to correspond letters and numbers. The Chaldean style matches the vibrations between the two.
+          </li>
+          <li>
+            Chaldean is the older of the two and is also considered more "accurate".
+          </li>
+          <li>
+            It take into account the numerical value of your name, it bases its interpretations on the name you are most known by. So, for example, if your name is Peter Smith, but you usually go by <i>Pete</i>, your numerology chart would be calculated based on <i>Pete Smith</i>.
+          </li>
+          <li>
+             It always uses compound, or double-digit numbers. Single digits represent outer influences and double digits represent inner aspects to a person.
+          </li>
+          <li>
+             Single digits represent the outer aspects of a person, while double digits reveal inner influences.
+          </li>
+          <li>
+            Chaldean numerology bases your date of birth number on the day of the month you were born. For example, if your birthday is May 21th, your number would be 21. Your birth number is extremely important in Chaldean numerology because, unlike your name, it is constant. That day you were born will never change. It is a constant in your numerological chart.
+          </li>
+        </ul>
+    </div>
+  </body>
+</html>
